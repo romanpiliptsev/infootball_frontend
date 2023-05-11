@@ -1,0 +1,30 @@
+.green {
+    background: #26d726;
+}
+
+.orange {
+    background: #ff9900;
+}
+
+.loader-pulse {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: load-pulse 0.85s infinite linear;
+}
+
+@keyframes load-pulse {
+    0% {
+        transform: scale(0.15);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}

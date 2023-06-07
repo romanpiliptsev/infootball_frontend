@@ -13,7 +13,7 @@ const Registration = () => {
     const navigate = useNavigate();
 
     function checkUsername(username) {
-        fetch(`http://localhost:8080/user/check/${username}`)
+        fetch(`https://infootball-backend.onrender.com/user/check/${username}`)
             .then(resp => resp.text())
             .then(data => {
                 if (data === "") {
@@ -38,7 +38,7 @@ const Registration = () => {
     function registrationFun(e) {
         e.preventDefault()
 
-        fetch("http://localhost:8080/user/registration", {
+        fetch("https://infootball-backend.onrender.com/user/registration", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

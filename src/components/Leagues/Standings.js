@@ -15,7 +15,7 @@ const Standings = () => {
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
-            fetch(`http://localhost:8080/standings/${code}`)
+            fetch(`https://infootball-backend.onrender.com/standings/${code}`)
                 .then(resp => resp.json())
                 .then(data => {
                     setData(data.standings[0].table)

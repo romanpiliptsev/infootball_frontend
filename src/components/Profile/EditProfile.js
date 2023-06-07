@@ -12,7 +12,7 @@ const EditProfile = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:8080/user/get", {
+        fetch("https://infootball-backend.onrender.com/user/get", {
             headers: {
                 "Content-Type": "application/json",
                 "AUTHORIZATION": window.localStorage.getItem('token')
@@ -32,7 +32,7 @@ const EditProfile = () => {
 
     function checkUsername(newUsername) {
         if (newUsername !== "")
-            fetch(`http://localhost:8080/user/check/${newUsername}`)
+            fetch(`https://infootball-backend.onrender.com/user/check/${newUsername}`)
                 .then(resp => resp.text())
                 .then(data => {
                     if (data === "" || username === newUsername) {
@@ -57,7 +57,7 @@ const EditProfile = () => {
     function changeUsername(e) {
         e.preventDefault()
 
-        fetch(`http://localhost:8080/user/update-username/${newUsername}`, {
+        fetch(`https://infootball-backend.onrender.com/user/update-username/${newUsername}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -79,7 +79,7 @@ const EditProfile = () => {
     function changeEmail(e) {
         e.preventDefault()
 
-        fetch(`http://localhost:8080/user/update-email/${email}`, {
+        fetch(`https://infootball-backend.onrender.com/user/update-email/${email}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -99,7 +99,7 @@ const EditProfile = () => {
     }
 
     function changePassword(e) {
-        fetch(`http://localhost:8080/user/update-password/${userPassword}`, {
+        fetch(`https://infootball-backend.onrender.com/user/update-password/${userPassword}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

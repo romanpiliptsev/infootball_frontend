@@ -13,7 +13,7 @@ const FollowedPage = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch("http://localhost:8080/team/list", {
+        fetch("https://infootball-backend.onrender.com/team/list", {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",

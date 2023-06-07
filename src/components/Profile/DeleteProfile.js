@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 const DeleteProfile = () => {
     const navigate = useNavigate();
     function deleteAccount() {
-        fetch("https://infootball-backend.onrender.com/user/remove", {
+        fetch("http://localhost:8080/user/remove", {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

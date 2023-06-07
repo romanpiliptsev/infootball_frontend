@@ -14,7 +14,7 @@ const MatchesPage = () => {
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
-            fetch("https://infootball-backend.onrender.com/matches")
+            fetch("http://localhost:8080/matches")
                 .then(resp => resp.json())
                 .then(data => {
                     setData(data.matches)

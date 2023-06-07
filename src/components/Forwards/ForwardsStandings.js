@@ -16,7 +16,7 @@ const ForwardsStandings = () => {
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
-            fetch(`https://infootball-backend.onrender.com/scorers/${code}`)
+            fetch(`http://localhost:8080/scorers/${code}`)
                 .then(resp => resp.json())
                 .then(data => {
                     setData(data.scorers)

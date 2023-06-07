@@ -5,6 +5,8 @@ import Image from "../Other/Image";
 import success from "../../images/success.svg";
 import warning from "../../images/warning.svg";
 
+// http://infootball-backend.onrender.com/user/activate/${currentPathName}
+
 const ActivateAccount = () => {
     const location = useLocation()
     const currentPathName = location.pathname.toString().split("/")[2]
@@ -14,7 +16,7 @@ const ActivateAccount = () => {
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
-            fetch(`https://infootball-backend.onrender.com/user/activate/${currentPathName}`, {
+            fetch(`http://localhost:8080/user/activate/${currentPathName}`, {
                 method: 'PUT'
             })
                 .then(resp => resp.json())

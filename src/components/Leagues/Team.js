@@ -7,7 +7,7 @@ const Team = (props) => {
     const [followedTeams, setFollowedTeams] = useState([])
 
     useEffect(() => {
-        fetch("https://infootball-backend.onrender.com/team/list", {
+        fetch("http://localhost:8080/team/list", {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -25,7 +25,7 @@ const Team = (props) => {
 
     function followTeam() {
         followedTeams.pop()
-        fetch("https://infootball-backend.onrender.com/team/follow", {
+        fetch("http://localhost:8080/team/follow", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const Team = (props) => {
             body: JSON.stringify({
                 teamCode: team.team.id,
                 teamName: team.team.name,
-                teamEmblemUrl: team.team.crest
+                teamEmblemLink: team.team.crest
             })
         })
             .then(resp => resp.text())
@@ -54,7 +54,7 @@ const Team = (props) => {
             }
         })
 
-        fetch(`https://infootball-backend.onrender.com/team/delete/${teamId}`, {
+        fetch(`http://localhost:8080/team/delete/${teamId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

@@ -12,7 +12,7 @@ const FollowedMatches = (props) => {
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
-            fetch(`https://infootball-backend.onrender.com/teams/${props.code}`, {
+            fetch(`http://localhost:8080/teams/${props.code}`, {
                 headers: {
                     "Content-Type": "application/json",
                     "AUTHORIZATION": window.localStorage.getItem('token')
